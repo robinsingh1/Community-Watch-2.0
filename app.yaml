@@ -1,0 +1,20 @@
+application: communitywatch2
+version: 5
+runtime: python
+api_version: 1
+
+builtins:
+- datastore_admin: on
+
+handlers:
+- url: /login
+  static_files: login.html
+  upload: login.html
+- url: /register
+  static_files: register.html
+  upload: register.html
+- url: /cleanup_sessions
+  script: cleanup_sessions.py
+- url: /.*
+  script: Main.py
+  
